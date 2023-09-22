@@ -8,7 +8,29 @@
   <packaging>jar</packaging>
 
   <name>Port of the Python usaddress parser for Java</name>
+  <description>Parse unstructured United States address strings into address components, using NLP methods.</description>
   <url>https://github.com/dgileadi/usaddress-java</url>
+
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>http://www.opensource.org/licenses/mit-license.php</url>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <name>David Gileadi</name>
+      <email>gileadis@gmail.com</email>
+      <organizationUrl>https://github.com/dgileadi</organizationUrl>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:git://github.com/dgileadi/usaddress-java.git</connection>
+    <developerConnection>scm:git:ssh://github.com:dgileadi/usaddress-java.git</developerConnection>
+    <url>http://github.com/dgileadi/usaddress-java/tree/main</url>
+  </scm>
 
   <properties>
     <maven.compiler.target>11</maven.compiler.target>
@@ -31,42 +53,42 @@
   </dependencies>
 
   <build>
-      <plugins>
-          <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-javadoc-plugin</artifactId>
-              <version>3.6.0</version>
-              <executions>
-                  <execution>
-                      <id>attach-javadoc</id>
-                      <goals>
-                          <goal>jar</goal>
-                      </goals>
-                  </execution>
-              </executions>
-          </plugin>
-          <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-source-plugin</artifactId>
-              <version>3.3.0</version>
-              <executions>
-                  <execution>
-                      <id>attach-source</id>
-                      <goals>
-                          <goal>jar</goal>
-                      </goals>
-                  </execution>
-              </executions>
-          </plugin>
-      </plugins>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.6.0</version>
+        <executions>
+          <execution>
+            <id>attach-javadoc</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>3.3.0</version>
+        <executions>
+          <execution>
+            <id>attach-source</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
   </build>
 
   <distributionManagement>
-      <repository>
-        <id>ossrh</id>
-        <name>Central Repository OSSRH</name>
-        <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-      </repository>
-    </distributionManagement>
+    <repository>
+      <id>ossrh</id>
+      <name>Central Repository OSSRH</name>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+  </distributionManagement>
 
 </project>
