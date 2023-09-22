@@ -1,5 +1,7 @@
 # usaddress-java
 
+[![Javadoc](https://img.shields.io/badge/JavaDoc-Online-green)](https://dgileadi.github.io/usaddress-java/javadoc/)
+
 usaddress-java is a Java port of [the usaddress Python library](https://github.com/datamade/usaddress) for parsing unstructured United States address strings into address components, using NLP methods.
 
 **What this can do:** Using a probabilistic model, it makes educated guesses in identifying address components, even in tricky cases where rule-based parsers typically break down.
