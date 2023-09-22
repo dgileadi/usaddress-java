@@ -40,6 +40,8 @@ usaddress-java is a Java port of [the usaddress Python library](https://github.c
     Address parsed = AddressParser.parseAndClean(address);
     ```
 
+For more details you may [read the API documentation]([javadoc/](https://dgileadi.github.io/usaddress-java/javadoc/)).
+
 ### Building & testing the code in this repo
 
 To build a development version of usaddress on your machine, run the following code in your command line:
