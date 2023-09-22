@@ -21,6 +21,9 @@ import third_party.org.chokkan.crfsuite.Attribute;
 import third_party.org.chokkan.crfsuite.Item;
 import third_party.org.chokkan.crfsuite.ItemSequence;
 
+/**
+ * Parse US addresses into fields and detect the type of each field.
+ */
 public final class AddressParser {
     private static final Pattern AMPERSAND_PATTERN = Pattern.compile("(&#38;)|(&amp;)");
     private static final Pattern TOKEN_PATTERN = Pattern.compile("\\(*\\b[^\\s,;#&\\(\\)]+[.,;\\)\\n]*|[#&]",
@@ -130,8 +133,8 @@ public final class AddressParser {
     }
 
     /**
-     * Split an address string into components, and assign a type to each component.
-     * Also merge consecutive components and strip commas.
+     * Split an address string into fields, and assign a type to each field.
+     * Also merge consecutive fields and strip commas.
      *
      * @param address the address string to parse.
      * @return the parsed address.
@@ -169,7 +172,7 @@ public final class AddressParser {
     }
 
     /**
-     * Split an address string into components, and assign a type to each component.
+     * Split an address string into fields, and assign a type to each field.
      *
      * @param address the address string to parse.
      * @return the parsed address.
