@@ -1,4 +1,5 @@
 name: Publish package to the Maven Central Repository
+
 on:
   release:
     types: [created]
@@ -6,8 +7,15 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Set up Maven Central Repository
+      - name: Step 1 - Checkout code
+        uses: actions/checkout@v4
+
+      - name: Step 2 - Import GPG key
+        run: |
+          echo "${{ secrets.GPG_PUBLIC_KEY }}" | gpg --import
+          echo "${{ secrets.GPG_SECRET_KEY }}" | gpg --import --no-tty --batch --yes
+
+      - name: Step 3 - Set up Maven Central Repository
         uses: actions/setup-java@v3
         with:
           java-version: '11'
@@ -15,8 +23,10 @@ jobs:
           server-id: ossrh
           server-username: MAVEN_USERNAME
           server-password: MAVEN_PASSWORD
-      - name: Publish package
+
+      - name: Step 4 - Publish package
         run: mvn --batch-mode deploy
         env:
           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
